@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLORS } from '../../constants';
+import { COLORS, WEIGHTS } from '../../constants';
 import SearchInput from '../SearchInput';
 import Icon from '../Icon';
 
@@ -26,7 +26,7 @@ const Wrapper = styled.div`
   color: ${COLORS.white};
   background-color: ${COLORS.gray[900]};
   padding: ${12 / 16}rem ${32 / 16}rem;
-  font-weight: 500;
+  font-weight: ${WEIGHTS.normal};
   font-size: ${14 / 16}rem;
 `;
 
