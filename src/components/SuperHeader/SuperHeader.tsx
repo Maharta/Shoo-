@@ -9,14 +9,19 @@ function SuperHeader({ headline }: { headline: string }) {
       <Headline>{headline}</Headline>
       <SearchInput iconColor={COLORS.white} />
       <HelpLink href="www.google.com">Help</HelpLink>
-      <Icon id="shopping-bag" size={24} strokeWidth={1} color={COLORS.white} />
+      <StyledIcon
+        id="shopping-bag"
+        size={24}
+        strokeWidth={1}
+        color={COLORS.white}
+      />
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
   display: flex;
-  justify-content: center;
+  align-items: center;
   gap: 24px;
   color: ${COLORS.white};
   background-color: ${COLORS.gray[900]};
@@ -32,6 +37,11 @@ const Headline = styled.p`
 const HelpLink = styled.a`
   color: inherit;
   text-decoration: none;
+`;
+
+const StyledIcon = styled(Icon)`
+  flex-shrink: 0;
+  flex-basis: 24px;
 `;
 
 export default SuperHeader;
