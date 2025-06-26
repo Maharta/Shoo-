@@ -1,11 +1,5 @@
 import styled from 'styled-components';
-import {
-  Search,
-  Menu,
-  ShoppingBag,
-  ChevronDown,
-  type Icon,
-} from 'react-feather';
+import { Search, Menu, ShoppingBag, ChevronDown } from 'react-feather';
 
 const icons = {
   search: Search,
@@ -17,14 +11,14 @@ const icons = {
 type IconId = keyof typeof icons;
 
 interface IconProp {
-    id: IconId,
-    color: string,
-    size: string,
-    strokeWidth: number
+  id: IconId;
+  color?: string;
+  size: number;
+  strokeWidth: number;
 }
 
-const Icon = ({ id, color, size, strokeWidth, ...delegated } : IconProp) => {
-  const Component: Icon = icons[id];
+function Icon({ id, color, size, strokeWidth, ...delegated }: IconProp) {
+  const Component = icons[id];
 
   if (!Component) {
     throw new Error(`No icon found for ID: ${id}`);
@@ -35,7 +29,7 @@ const Icon = ({ id, color, size, strokeWidth, ...delegated } : IconProp) => {
       <Component strokeWidth={strokeWidth} color={color} size={size} />
     </Wrapper>
   );
-};
+}
 
 const Wrapper = styled.div`
   & > svg {
