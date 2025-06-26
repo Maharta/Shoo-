@@ -5,17 +5,12 @@ type VisuallyHiddenProps = React.PropsWithChildren<
   React.HTMLAttributes<HTMLDivElement>
 >;
 
-const VisuallyHidden: React.FC<VisuallyHiddenProps> = ({
-  children,
-  ...delegated
-}) => {
+function VisuallyHidden({ children, ...delegated }: VisuallyHiddenProps) {
   const [forceShow, setForceShow] = React.useState(false);
 
   React.useEffect(() => {
     if (process.env.NODE_ENV !== 'production') {
-      const handleKeyDown: (ev: KeyboardEvent) => void = (
-        ev: KeyboardEvent
-      ) => {
+      const handleKeyDown = (ev: KeyboardEvent) => {
         if (ev.key === 'Alt') {
           setForceShow(true);
         }
@@ -36,11 +31,11 @@ const VisuallyHidden: React.FC<VisuallyHiddenProps> = ({
   }, []);
 
   if (forceShow) {
-    return children;
+    return <>{children}</>;
   }
 
   return <Wrapper {...delegated}>{children}</Wrapper>;
-};
+}
 
 const Wrapper = styled.div`
   position: absolute;
