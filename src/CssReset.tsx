@@ -1,4 +1,7 @@
-/* 1. Use a more-intuitive box-sizing model */
+import { createGlobalStyle } from 'styled-components';
+
+const CssReset = createGlobalStyle`
+   /* 1. Use a more-intuitive box-sizing model */
 *, *::before, *::after {
   box-sizing: border-box;
   font-family: "Raleway", sans-serif;
@@ -53,3 +56,7 @@ h1, h2, h3, h4, h5, h6 {
 #root, #__next {
   isolation: isolate;
 }
+  
+  `;
+
+export default CssReset;
