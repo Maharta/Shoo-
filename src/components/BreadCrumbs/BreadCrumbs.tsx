@@ -21,9 +21,9 @@ interface CrumbProps extends React.LiHTMLAttributes<HTMLLIElement> {
 
 BreadCrumbs.Crumb = function ({ href, children, ...delegated }: CrumbProps) {
   return (
-    <li {...delegated}>
+    <ListItem {...delegated}>
       <a href={href}>{children}</a>
-    </li>
+    </ListItem>
   );
 };
 
@@ -34,13 +34,19 @@ const ListWrapper = styled.ol`
   gap: var(--gap);
   font-size: ${14 / 16}rem;
   font-weight: ${WEIGHTS.normal};
+`;
 
-  & li a {
+const ListItem = styled.li`
+  & a {
     text-decoration: none;
     color: ${COLORS.gray['700']};
   }
 
-  & li:not(:first-of-type) {
+  &:hover a {
+    color: black;
+  }
+
+  &:not(:first-of-type) {
     &::before {
       content: '/';
       margin-right: var(--gap);
