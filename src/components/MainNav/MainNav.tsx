@@ -39,7 +39,7 @@ const BreadCrumbWrapper = styled.div`
 `;
 
 const CategoryHeading = styled.h2`
-  flex: 2;
+  flex: 3;
 
   color: ${COLORS.gray['900']};
   font-size: 1.5rem;

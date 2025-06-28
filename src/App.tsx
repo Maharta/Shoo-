@@ -1,18 +1,17 @@
 import styled from 'styled-components';
 import Header from './components/Header';
-import ShoeSideBar from './components/ShoeSidebar';
 import MainNav from './components/MainNav';
+import Content from './components/Content';
 
 function App() {
   return (
     <>
       <Header />
       <MainContent>
-        <MainNav />
-        <ShoeSideBar />
-        {/* <Select>
-
-        </Select> */}
+        <MainNavWrapper>
+          <MainNav />
+        </MainNavWrapper>
+        <Content />
       </MainContent>
     </>
   );
@@ -20,6 +19,10 @@ function App() {
 
 const MainContent = styled.main`
   padding: 64px 32px;
+`;
+
+const MainNavWrapper = styled.div`
+  margin-bottom: 32px;
 `;
 
 export default App;

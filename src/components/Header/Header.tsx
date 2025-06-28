@@ -40,6 +40,7 @@ const Nav = styled.nav`
   flex: 2;
   display: flex;
   gap: 48px;
+  margin: 0 48px;
 `;
 
 // added the third child of flexbox for centering
